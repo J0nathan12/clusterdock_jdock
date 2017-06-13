@@ -50,7 +50,7 @@ clusterdock_run() {
         | awk -F " *= *" '/^cloudera_namespace/ {print $2}')
 
 
-    CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/_/centos/centos:7"
+    CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/centos/centos:7"
 
   fi
 
@@ -124,7 +124,7 @@ clusterdock_ssh() {
         | awk -F " *= *" '/^cloudera_namespace/ {print $2}')
 
 
-    CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/_/centos/centos:7"
+    CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/centos/centos:7"
 
   fi
 
