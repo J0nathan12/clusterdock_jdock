@@ -45,7 +45,7 @@ if __name__ == '__main__':
     # Arguments that should be present for all possible topologies go here. This should be a very
     # short list...
     parser.add_argument('-o', '--operating-system', help='Operating system of the cluster',
-                        metavar="os", default="centos7.3.1611")
+                        metavar="os", default="centos7")
     parser.add_argument('--namespace', metavar='ns',
                         help='The namespace to use when tagging the image')
     parser.add_argument('-n', '--network', help='User-defined network to use',

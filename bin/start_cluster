@@ -47,7 +47,7 @@ def main():
     parser.add_argument('-n', '--network', help="User-defined network to use",
                         metavar="network", default="cluster")
     parser.add_argument('-o', '--operating-system', help="Operating system of the cluster",
-                        metavar="os", default="centos7.3.1611")
+                        metavar="os", default="centos7")
     parser.add_argument('-r', '--registry-url', metavar='url', default=DEFAULT_DOCKER_REGISTRY_URL,
                         help='URL of the Docker registry to use when pulling images')
 

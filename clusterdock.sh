@@ -49,11 +49,11 @@ clusterdock_run() {
     local CLOUDERA_NAMESPACE=$(curl -s "${CONSTANTS_CONFIG_URL}" \
         | awk -F " *= *" '/^cloudera_namespace/ {print $2}')
 
-    CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/${CLOUDERA_NAMESPACE}/63fe0762d100:latest"
+    CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/_/centos/centos:7"
   fi
 
   if [ "${CLUSTERDOCK_PULL}" != "false" ]; then
-    sudo docker pull "${CLUSTERDOCK_IMAGE}" &> /dev/null
+    sudo docker pull centos:7 &> /dev/null
   fi
 
   if [ -n "${CLUSTERDOCK_TARGET_DIR}" ]; then
@@ -74,7 +74,7 @@ clusterdock_run() {
 
   if [ -n "${CLUSTERDOCK_TOPOLOGY_IMAGE}" ]; then
     if [ "${CLUSTERDOCK_PULL}" != "false" ]; then
-      sudo docker pull "${CLUSTERDOCK_TOPOLOGY_IMAGE}" &> /dev/null
+      sudo docker pull centos:7 &> /dev/null
     fi
 
     local TOPOLOGY_CONTAINER_ID=$(sudo docker create "${CLUSTERDOCK_TOPOLOGY_IMAGE}")
@@ -121,16 +121,16 @@ clusterdock_ssh() {
     local CLOUDERA_NAMESPACE=$(curl -s "${CONSTANTS_CONFIG_URL}" \
         | awk -F " *= *" '/^cloudera_namespace/ {print $2}')
 
-    CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/${CLOUDERA_NAMESPACE}/63fe0762d100:latest"
+    CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/_/centos/centos:7"
   fi
 
   if [ "${CLUSTERDOCK_PULL}" != "false" ]; then
-    sudo docker pull "${CLUSTERDOCK_IMAGE}" &> /dev/null
+    sudo docker pull centos:7 &> /dev/null
   fi
 
   if [ -n "${CLUSTERDOCK_TOPOLOGY_IMAGE}" ]; then
     if [ "${CLUSTERDOCK_PULL}" != "false" ]; then
-      sudo docker pull "${CLUSTERDOCK_TOPOLOGY_IMAGE}" &> /dev/null
+      sudo docker pull centos:7 &> /dev/null
     fi
 
     local TOPOLOGY_CONTAINER_ID=$(sudo docker create "${CLUSTERDOCK_TOPOLOGY_IMAGE}")

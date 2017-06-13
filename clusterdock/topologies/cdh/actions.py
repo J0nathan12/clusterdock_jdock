@@ -40,14 +40,12 @@ logger.setLevel(logging.INFO)
 DEFAULT_CLOUDERA_NAMESPACE = Constants.DEFAULT.cloudera_namespace # pylint: disable=no-member
 
 def start(args):
-    primary_node_image = "{0}/{1}/clusterdock:{2}_{3}_primary-node".format(
-        args.registry_url, args.namespace or DEFAULT_CLOUDERA_NAMESPACE,
-        args.cdh_string, args.cm_string
+    primary_node_image = "{0}/_/centos/centos:7".format(
+        args.registry_url
     )
 
-    secondary_node_image = "{0}/{1}/clusterdock:{2}_{3}_secondary-node".format(
-        args.registry_url, args.namespace or DEFAULT_CLOUDERA_NAMESPACE,
-        args.cdh_string, args.cm_string
+    secondary_node_image = "{0}/_/cenos/centos:7".format(
+        args.registry_url
     )
 
     for image in [primary_node_image, secondary_node_image]:

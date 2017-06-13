@@ -13,7 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM centos:7.3.1611
+FROM centos:7
 
 # Install useful things that are missing from the centos:6.6 image.
 RUN yum install -y openssh-clients \
