@@ -49,11 +49,9 @@ clusterdock_run() {
     local CLOUDERA_NAMESPACE=$(curl -s "${CONSTANTS_CONFIG_URL}" \
         | awk -F " *= *" '/^cloudera_namespace/ {print $2}')
 
-<<<<<<< HEAD
+
     CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/_/centos/centos:7"
-=======
-    CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/${CLOUDERA_NAMESPACE}/jdock:latest"
->>>>>>> 6a784c8eaae9cf6f1fe369450efc110a94955d00
+
   fi
 
   if [ "${CLUSTERDOCK_PULL}" != "false" ]; then
@@ -125,11 +123,9 @@ clusterdock_ssh() {
     local CLOUDERA_NAMESPACE=$(curl -s "${CONSTANTS_CONFIG_URL}" \
         | awk -F " *= *" '/^cloudera_namespace/ {print $2}')
 
-<<<<<<< HEAD
+
     CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/_/centos/centos:7"
-=======
-    CLUSTERDOCK_IMAGE="${DOCKER_REGISTRY_URL}/${CLOUDERA_NAMESPACE}/jdock:latest"
->>>>>>> 6a784c8eaae9cf6f1fe369450efc110a94955d00
+
   fi
 
   if [ "${CLUSTERDOCK_PULL}" != "false" ]; then
