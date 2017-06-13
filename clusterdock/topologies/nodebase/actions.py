@@ -29,9 +29,8 @@ logger.setLevel(logging.INFO)
 DEFAULT_CLUSTERDOCK_NAMESPACE = 'clusterdock' # pylint: disable=no-member
 
 def start(args):
-    image = "{0}/{1}/clusterdock:{2}_nodebase".format(args.registry_url,
-                                                      args.namespace or DEFAULT_CLUSTERDOCK_NAMESPACE,
-                                                      args.operating_system)
+    image = "{0}/_/centos/centos:7".format(args.registry_url
+                                                      )
     if args.always_pull or not is_image_available_locally(image):
         pull_image(image)
 
